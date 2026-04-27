@@ -78,5 +78,3 @@ if __name__ == "__main__":
             data, sIPAddr = udpPort.recvData()
             d = data.decode("UTF-8").strip()
             print(rcc.control(d))
-
-
