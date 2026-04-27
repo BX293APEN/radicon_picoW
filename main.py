@@ -6,8 +6,8 @@ class RadioControlCar():
         if(key == "w"):
             self.leftGPIO1.value(1)
             self.leftGPIO2.value(0)
-            self.rightGPIO1.value(1)
-            self.rightGPIO2.value(0)
+            self.rightGPIO1.value(0)
+            self.rightGPIO2.value(1)
 
             self.leftLED.value(1)
             self.rightLED.value(1)
@@ -16,8 +16,8 @@ class RadioControlCar():
         elif(key == "s"):
             self.leftGPIO1.value(0)
             self.leftGPIO2.value(1)
-            self.rightGPIO1.value(0)
-            self.rightGPIO2.value(1)
+            self.rightGPIO1.value(1)
+            self.rightGPIO2.value(0)
             self.leftLED.value(0)
             self.rightLED.value(0)
             return "DOWN"
@@ -25,8 +25,8 @@ class RadioControlCar():
         elif(key == "d"):
             self.leftGPIO1.value(0)
             self.leftGPIO2.value(1)
-            self.rightGPIO1.value(1)
-            self.rightGPIO2.value(0)
+            self.rightGPIO1.value(0)
+            self.rightGPIO2.value(1)
             self.leftLED.value(0)
             self.rightLED.value(1)
             return "RIGHT"
@@ -35,8 +35,8 @@ class RadioControlCar():
         elif(key == "a"): # 左
             self.leftGPIO1.value(1)
             self.leftGPIO2.value(0)
-            self.rightGPIO1.value(0)
-            self.rightGPIO2.value(1)
+            self.rightGPIO1.value(1)
+            self.rightGPIO2.value(0)
             self.leftLED.value(1)
             self.rightLED.value(0)
             return "LEFT"
@@ -78,4 +78,5 @@ if __name__ == "__main__":
             data, sIPAddr = udpPort.recvData()
             d = data.decode("UTF-8").strip()
             print(rcc.control(d))
+
 
