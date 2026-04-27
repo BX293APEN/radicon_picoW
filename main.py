@@ -60,8 +60,6 @@ class RadioControlCar():
         rightGPIO1      = 17,
         rightGPIO2      = 16
     ):
-        self.ledOnboard = Pin('LED', Pin.OUT)
-        self.ledOnboard.value(0)
         self.leftLED    = Pin(leftLED, Pin.OUT)
         self.rightLED   = Pin(rightLED, Pin.OUT)
         self.leftGPIO1  = Pin(leftGPIO1, Pin.OUT)
@@ -73,7 +71,9 @@ class RadioControlCar():
 
 if __name__ == "__main__":
     rcc = RadioControlCar()
-    with PortSetup("./config.json", ipAddress = "192.168.10.60", port = 8080) as udpPort:
+    ledOnboard = Pin('LED', Pin.OUT)
+    ledOnboard.value(0)
+    with PortSetup("./config.json", ipAddress = "192.168.10.60", port = 8080, led = ledOnboard) as udpPort:
         while True:
             data, sIPAddr = udpPort.recvData()
             d = data.decode("UTF-8").strip()
