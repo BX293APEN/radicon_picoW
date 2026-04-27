@@ -53,21 +53,21 @@ class RadioControlCar():
 
     def __init__(
         self,
-        leftLED         = 0,
-        rightLED        = 0,
-        leftGPIO1       = 19,
-        leftGPIO2       = 20,
-        rightGPIO1      = 22,
-        rightGPIO2      = 21
+        leftLED         = 4,
+        rightLED        = 7,
+        leftGPIO1       = 14,
+        leftGPIO2       = 15,
+        rightGPIO1      = 17,
+        rightGPIO2      = 16
     ):
         self.ledOnboard = Pin('LED', Pin.OUT)
         self.ledOnboard.value(0)
-        self.leftLED    = leftLED
-        self.rightLED   = rightLED
-        self.leftGPIO1  = leftGPIO1
-        self.leftGPIO2  = leftGPIO2
-        self.rightGPIO1 = rightGPIO1
-        self.rightGPIO2 = rightGPIO2
+        self.leftLED    = Pin(leftLED, Pin.OUT)
+        self.rightLED   = Pin(rightLED, Pin.OUT)
+        self.leftGPIO1  = Pin(leftGPIO1, Pin.OUT)
+        self.leftGPIO2  = Pin(leftGPIO2, Pin.OUT)
+        self.rightGPIO1 = Pin(rightGPIO1, Pin.OUT)
+        self.rightGPIO2 = Pin(rightGPIO2, Pin.OUT)
 
         self.control()
 
