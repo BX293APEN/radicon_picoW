@@ -73,7 +73,7 @@ class RadioControlCar():
 
 if __name__ == "__main__":
     rcc = RadioControlCar()
-    with PortSetup("./config.json", ipAddress = "192.168.10.65", port = 8080) as udpPort:
+    with PortSetup("./config.json", ipAddress = "192.168.10.60", port = 8080) as udpPort:
         while True:
             data, sIPAddr = udpPort.recvData()
             d = data.decode("UTF-8").strip()

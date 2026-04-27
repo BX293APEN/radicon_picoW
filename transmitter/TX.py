@@ -1,7 +1,7 @@
 import socket
 
 if __name__ == "__main__":
-    ip = "192.168.10.65"
+    ip = "192.168.10.60"
     port = 8080
     while True:
         txData = input("wasd : ")
